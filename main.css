@@ -34,6 +34,17 @@ header {
     position: relative;
 }
 
+.mobile-h1 {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    transform: translateX(45%);
+    margin-top: 15px;
+    text-transform: none;
+
+    font-size: 1.5em;
+}
+
 nav {
     position: absolute;
     top: 0;
@@ -204,6 +215,9 @@ button {
     color: #ffffff;
     padding: 10px 10px;
 
+    /* This is needed for firefox to stop showing text cursor */
+    cursor: default;
+
     margin: 10px 0 10px 20px;
     width: 150px;
     text-align: center;
@@ -319,6 +333,10 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
         margin-right: 20px;
     }
 
+    .mobile-h1 {
+        display: none;
+    }
+
     ul {
         overflow: visible;
         padding: 0;
@@ -349,6 +367,8 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
         font-size: 1.65em;
         font-weight: bold;
         padding-left: 10px;
+
+        text-transform: none;
     }
 
     ul li:last-child {
