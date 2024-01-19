@@ -1,0 +1,396 @@
+:root {
+    --blue-900: #020659;
+    --blue-800: #020873;
+    --blue-700: #030A8C;
+    --blue-600: #2104D9;
+    --blue-500: #0D8DFB;
+    --blue-400: #2699FB;
+    --maroon: #590242;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html {
+    background-color: var(--blue-900);
+}
+
+body {
+    width: 375px;
+    margin: 0 auto;
+
+}
+
+header {
+    color: #ffffff;
+    background: linear-gradient(90deg, var(--blue-600), #000000);
+    width: 100%;
+    padding: 65px 30px 10px 30px;
+
+    position: relative;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--blue-700);
+}
+
+main, footer {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+footer {
+    text-align: center;
+    color: var(--maroon);
+    padding: 20px 0;
+}
+
+h1 {
+    font-size: 1.25em;
+    text-transform: uppercase;
+}
+
+h2, h3 {
+    font-size: 1em;
+    color: var(--maroon);
+}
+
+p, dl, dd {
+    font-size: 1em;
+}
+
+footer p {
+    font-size: 0.75em;
+}
+
+ul {
+    overflow: hidden;
+    list-style: none;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+section h2 {
+    margin-left: 20px;
+    text-transform: uppercase;
+}
+
+#trending {
+    padding: 20px 0;
+}
+
+#trending .scroll {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    overflow-x: auto;
+}
+
+
+#trending .scroll section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+}
+
+#trending .scroll div {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(255,255,255, 0.8);
+    width: 100%;
+
+    padding: 5px;
+}
+
+#playlists .scroll, #curated .scroll {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    overflow-x: auto;
+}
+
+#playlists section, #curated section {
+    margin: 10px;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+#curated h2, #playlists h2 {
+    margin-bottom: 5px;
+}
+
+#playlists h3, #curated h3 {
+    color: #ffffff;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#curated, #playlists {
+    padding: 20px 0;
+}
+
+#playlists section {
+    background-color: var(--blue-500);
+}
+
+#curated section {
+    background-color: var(--blue-800);
+}
+
+#playlists .scroll {
+    background-color: var(--blue-400);
+}
+
+#curated .scroll {
+    background-color: var(--blue-700);
+}
+
+
+h3 {
+    text-transform: uppercase;
+}
+
+dl {
+    color: var(--maroon);
+    margin-top: 10px;
+}
+
+dt {
+    font-style: italic;
+    display: inline-block;
+}
+
+dd {
+    display: inline-block;
+}
+
+section audio {
+    position: absolute;
+    width: 98%;
+    margin: 0 1%;
+    z-index: 1;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* li is not first child or being hovered */
+li:not(:first-child) a:visited:not(:hover) {
+    color: #ccc;
+}
+
+button {
+    all: unset;
+
+    background-color: var(--maroon);
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 10px 10px;
+
+    margin: 10px 0 10px 20px;
+    width: 150px;
+    text-align: center;
+
+    transition: all .1s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--blue-900);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+br {
+    display: none;
+}
+
+ul li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+
+label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+label span:before {
+    top: 5px;
+}
+
+label span:after {
+    top: -5px;
+}
+
+input {
+    display: none;
+}
+
+input:checked ~ ul {
+    max-height: 500px;
+}
+
+input:checked ~ label span {
+    background: transparent;
+}
+
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+
+@media screen and (min-width:834px) {
+    body {
+        width: 834px;
+    }
+
+    #playlists .scroll, #curated .scroll {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+
+        max-height: 500px;
+        overflow-y: auto;
+    }
+
+    #playlists section, #curated section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .playlists {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    button {
+        display: flex;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: 20px;
+    }
+
+    ul {
+        overflow: visible;
+        padding: 0;
+        position: absolute;
+        top: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        width: 100%;
+    }
+
+    ul li {
+        margin: 0;
+    }
+
+    br {
+        display: inline;
+    }
+
+    li:not(:first-child) {
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    li:first-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.65em;
+        font-weight: bold;
+        padding-left: 10px;
+    }
+
+    ul li:last-child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    label span, input {
+        display: none;
+    }
+
+    label {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+#trending ::-webkit-scrollbar {
+    width: 15px;
+}
+#trending ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 15px var(--maroon);
+
+}
+#trending ::-webkit-scrollbar-thumb {
+    background: var(--maroon);
+    border-radius: 5px;
+}
+#trending ::-webkit-scrollbar-thumb:hover {
+    background: var(--blue-900);
+}
+#playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
+    width: 15px;
+}
+#playlists ::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track  {
+    box-shadow: inset 0 0 15px var(--blue-900);
+}
+#playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
+    background: var(--blue-900);
+    border-radius: 5px;
+}
+#playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
