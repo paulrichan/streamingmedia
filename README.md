@@ -12,3 +12,7 @@ Students were given raw text content and mockup files to replicate a streaming m
 - Validate both HTML and CSS.
 
 ![CSS Validated](http://jigsaw.w3.org/css-validator/images/vcss-blue)
+
+## Experienced Issues
+- Keeping scrollbar styles consistent across browsers.
+- Applying styles around provided content without being able to restucture the HTML.
