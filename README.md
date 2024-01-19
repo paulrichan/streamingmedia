@@ -2,7 +2,7 @@
 This is a repository for the ASU GIT 337 - Assignment // Streaming Media. 
 
 ## Objective
-Students were given raw text content and mockup files to replicate a streaming media website. The website was to be responsive and include a navigation bar, audio content, custom scrollbars, and a footer.
+Students were given raw text content and mockup files to replicate a streaming media website. The website was to be responsive and include a navigation bar, audio content, custom scrollbars, and a footer. Publish repository publicly to GitHub and then host the website using GitHub Pages.
 
 ## Guidelines
 - Use the provided text content and mockup files to replicate the website.
