@@ -13,6 +13,7 @@
     margin: 0;
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -241,6 +242,11 @@ ul li {
     margin-top: 10px;
     margin-bottom: 10px;
     text-transform: uppercase;
+}
+
+/* Hide first li child on mobile */
+li:first-child {
+    display: none;
 }
 
 label {
